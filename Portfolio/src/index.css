@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-sys-black text-console-text font-sans antialiased overflow-x-hidden;
+    line-height: 1.6;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-console-text tracking-tight;
+    line-height: 1.2;
+  }
+
+  p {
+    @apply text-console-dim max-w-[65ch] leading-relaxed;
+  }
+
+  /* Log / Terminal Text */
+  .code {
+    @apply font-mono text-sm;
+  }
+}
+
+@layer components {
+  .container-terminal {
+    @apply max-w-[1000px] mx-auto px-6;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+
+  /* Shared "Panel" style for sections */
+  .sys-panel {
+    @apply bg-sys-dark border border-sys-border rounded-lg p-6 md:p-8;
+  }
+
+  /* Terminal Header for Sections */
+  .terminal-header {
+    @apply flex items-center gap-2 font-mono text-sm text-console-muted mb-8 border-b border-sys-border pb-2 w-full uppercase tracking-wider;
+  }
+
+  .terminal-prompt {
+    @apply text-console-accent font-bold;
+  }
+}
