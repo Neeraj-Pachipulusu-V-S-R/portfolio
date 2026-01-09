@@ -38,7 +38,7 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-10 md:py-16;
   }
 
   /* Shared "Panel" style for sections */
