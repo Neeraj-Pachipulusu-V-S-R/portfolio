@@ -75,7 +75,7 @@ export const Hero = () => {
 
                             {/* Decorative floating elements */}
                             <div className="absolute -right-6 -bottom-6 bg-sys-black border border-sys-border p-3 font-mono text-xs text-console-muted z-20 shadow-xl">
-                                <div>CPU: 12%</div>
+                                <div>CPU: 23%</div>
                                 <div>MEM: 4.2GB</div>
                                 <div className="text-console-success">SYS: ONLINE</div>
                             </div>

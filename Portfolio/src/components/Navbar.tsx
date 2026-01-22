@@ -27,6 +27,7 @@ export const Navbar = () => {
 
     const navLinks = [
         { name: '~/about', id: 'about' },
+        { name: '~/education', id: 'education' },
         { name: '~/skills', id: 'skills' },
         { name: '~/projects', id: 'projects' },
         { name: './contact', id: 'contact' },
@@ -35,8 +36,8 @@ export const Navbar = () => {
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${isScrolled
-                    ? 'bg-sys-black/95 backdrop-blur-sm border-sys-border py-3'
-                    : 'bg-transparent border-transparent py-5'
+                ? 'bg-sys-black/95 backdrop-blur-sm border-sys-border py-3'
+                : 'bg-transparent border-transparent py-5'
                 }`}
         >
             <div className="container-terminal flex items-center justify-between font-mono text-sm">
