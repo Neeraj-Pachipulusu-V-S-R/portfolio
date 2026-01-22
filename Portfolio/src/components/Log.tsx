@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Section } from './Section';
-import { logs, LogEntry } from '../data/logs';
+import { logs } from '../data/logs';
 import { Terminal, FileText, Calendar, Clock, ChevronDown, ChevronUp, X } from 'lucide-react';
 
 export const Log = () => {
