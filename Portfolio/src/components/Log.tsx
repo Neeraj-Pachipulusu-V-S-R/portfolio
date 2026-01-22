@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Section } from './Section';
 import { logs } from '../data/logs';
-import { Terminal, FileText, Calendar, Clock, ChevronDown, ChevronUp, X } from 'lucide-react';
+import { FileText, Calendar, Clock, ChevronDown, ChevronUp, X } from 'lucide-react';
 
 export const Log = () => {
     const [expandedLogId, setExpandedLogId] = useState<string | null>(null);
