@@ -12,7 +12,7 @@ export const Education = () => {
                 <span className="terminal-prompt">$</span> ./learning.pipeline
             </div>
 
-            <div className="max-w-6xl mx-auto py-6">
+            <div className="w-full mx-auto py-6 px-4 md:px-8">
 
                 {/* Desktop View: Shared Grid for Perfect Vertical Alignment */}
                 {/* Rows are implicitly sized by the content spanning them. We enforce min-height. */}
@@ -97,7 +97,7 @@ export const Education = () => {
 
                         <div className="flex flex-col group relative">
                             <div className="inline-block w-fit px-3 py-1 rounded bg-console-warn/10 text-console-warn text-xs font-mono mb-3 border border-console-warn/20">
-                                THREAD_02: Ongoing [Resumed]
+                                THREAD_02: Running [Resumed]
                             </div>
 
                             <div className="bg-sys-dark border-l-2 border-console-warn border-y border-r border-sys-border p-5 rounded-r-lg hover:bg-sys-surface/50 transition-colors w-full shadow-lg">

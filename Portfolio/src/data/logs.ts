@@ -8,7 +8,9 @@ export type LogEntry = {
     category: string;
     readTime: string;
     status: 'PUBLISHED' | 'DRAFT';
+    summary: string;
     content: string;
+    image?: string;
 };
 
 export const logs: LogEntry[] = [
@@ -19,7 +21,9 @@ export const logs: LogEntry[] = [
         category: 'AI / Engineering',
         readTime: '4 min read',
         status: 'PUBLISHED',
-        content: agenticAi
+        summary: 'The shift from chat-based LLMs to autonomous agents marks a new era in software engineering. We are moving from "asking" computers to "assigning" tasks.',
+        content: agenticAi,
+        image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200' // Abstract AI Network
     },
     {
         id: 'log_002',
@@ -28,6 +32,8 @@ export const logs: LogEntry[] = [
         category: 'Design / Psychology',
         readTime: '3 min read',
         status: 'DRAFT',
-        content: minimalism
+        summary: 'Why do we love terminal interfaces? Because they strip away the "noise" of modern UI. Building a portfolio that mimics this is a statement about efficiency.',
+        content: minimalism,
+        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200' // Terminal Code
     }
 ];

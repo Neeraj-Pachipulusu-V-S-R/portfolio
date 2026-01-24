@@ -1,8 +1,10 @@
 import { Terminal, ArrowRight } from 'lucide-react';
 import { content } from '../data/content';
+import { useNavigate } from 'react-router-dom';
 
 export const Hero = () => {
     const { name, role, tagline, resumeLink, profileImage } = content.hero;
+    const navigate = useNavigate();
 
     return (
         <section className="min-h-[85vh] flex items-center pt-28 pb-12 relative overflow-hidden">
@@ -46,8 +48,8 @@ export const Hero = () => {
                                 <span>./download_resume</span>
                             </a>
                             <button
-                                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                                className="group flex items-center gap-3 px-6 py-3 border border-sys-border text-console-text font-mono text-sm rounded hover:border-console-accent hover:text-console-accent transition-all bg-sys-surface/50"
+                                onClick={() => navigate('/projects')}
+                                className="group flex items-center gap-3 px-6 py-3 border border-sys-border text-console-text font-mono font-bold text-sm rounded transition-all bg-sys-surface/50 shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px] hover:border-console-accent hover:text-console-accent"
                             >
                                 <span>cd ./projects</span>
                                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />

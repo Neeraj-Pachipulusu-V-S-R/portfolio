@@ -1,27 +1,22 @@
+import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Education } from './components/Education';
-import { Certifications } from './components/Certifications';
-import { Skills } from './components/Skills';
-import { Experience } from './components/Experience';
-import { Projects } from './components/Projects';
-import { Log } from './components/Log';
-import { Contact } from './components/Contact';
+import { Home } from './pages/Home';
+import { LogPage } from './pages/LogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
+import { ProjectsPage } from './pages/ProjectsPage';
+import { ProjectDetailPage } from './pages/ProjectDetailPage';
 
 function App() {
   return (
     <div className="min-h-screen bg-[#0a0a0a]">
       <Navbar />
-      <Hero />
-      <About />
-      <Experience />
-      <Education />
-      <Certifications />
-      <Skills />
-      <Projects />
-      <Log />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/log" element={<LogPage />} />
+        <Route path="/log/:id" element={<BlogPostPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/:id" element={<ProjectDetailPage />} />
+      </Routes>
     </div>
   );
 }

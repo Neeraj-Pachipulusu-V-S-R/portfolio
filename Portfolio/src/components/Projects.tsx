@@ -49,7 +49,7 @@ export const Projects = () => {
               </div>
 
               <p className="text-console-dim text-sm leading-relaxed mb-6 flex-grow font-mono">
-                {">"} {project.description}
+                {">"} {project.content}
               </p>
 
               <div className="pt-4 border-t border-sys-border border-dashed mt-auto">

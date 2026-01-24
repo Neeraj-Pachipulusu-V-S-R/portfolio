@@ -77,24 +77,48 @@ export const content = {
     skills: [
         {
             category: "Languages",
-            items: ["Python", "C++", "TypeScript", "SQL"]
+            items: [
+                { name: "Python", icon: "https://cdn.simpleicons.org/python" },
+                { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus" },
+                { name: "TypeScript", icon: "https://cdn.simpleicons.org/typescript" },
+                { name: "SQL", icon: "https://cdn.simpleicons.org/postgresql" }
+            ]
         },
         {
             category: "Machine Learning",
-            items: ["PyTorch", "TensorFlow", "Scikit-learn", "HuggingFace", "OpenCV"]
+            items: [
+                { name: "PyTorch", icon: "https://cdn.simpleicons.org/pytorch" },
+                { name: "TensorFlow", icon: "https://cdn.simpleicons.org/tensorflow" },
+                { name: "Scikit-learn", icon: "https://cdn.simpleicons.org/scikitlearn" },
+                { name: "HuggingFace", icon: "https://cdn.simpleicons.org/huggingface" },
+                { name: "OpenCV", icon: "https://cdn.simpleicons.org/opencv" }
+            ]
         },
         {
             category: "Engineering & GenAI",
-            items: ["Docker", "Kubernetes", "AWS / GCP", "RAG Pipelines", "LLM Fine-tuning"]
+            items: [
+                { name: "Docker", icon: "https://cdn.simpleicons.org/docker" },
+                { name: "Kubernetes", icon: "https://cdn.simpleicons.org/kubernetes" },
+                { name: "GCP", icon: "https://cdn.simpleicons.org/googlecloud" },
+                { name: "RAG / LangChain", icon: "https://cdn.simpleicons.org/langchain" },
+                { name: "Fine-tuning", icon: "https://cdn.simpleicons.org/nvidia" }
+            ]
         },
         {
             category: "Web & Tools",
-            items: ["React", "FastAPI", "Git", "CI/CD", "Linux"]
+            items: [
+                { name: "React", icon: "https://cdn.simpleicons.org/react" },
+                { name: "FastAPI", icon: "https://cdn.simpleicons.org/fastapi" },
+                { name: "Git", icon: "https://cdn.simpleicons.org/git" },
+                { name: "CI/CD", icon: "https://cdn.simpleicons.org/githubactions" },
+                { name: "Linux", icon: "https://cdn.simpleicons.org/linux" }
+            ]
         }
     ],
     experience: [
         {
             host: "Cognizant (CTS)",
+            logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Cognizant_logo_2022.svg/1200px-Cognizant_logo_2022.svg.png",
             roles: [
                 {
                     title: "Jr. AI Engineer",
@@ -132,6 +156,7 @@ export const content = {
         },
         {
             host: "Google Cloud Community India",
+            logo: "https://cdn.simpleicons.org/googlecloud",
             roles: [
                 {
                     title: "Google Cloud Jams Facilitator",
@@ -145,6 +170,7 @@ export const content = {
         },
         {
             host: "National Institute of Urban Management (NIUM)",
+            logo: "", // Placeholder or generic building icon
             roles: [
                 {
                     title: "Full Stack Developer Intern",
@@ -158,6 +184,7 @@ export const content = {
         },
         {
             host: "Fluentgrid Limited",
+            logo: "", // Placeholder
             roles: [
                 {
                     title: "Software Engineer Intern",
@@ -172,22 +199,87 @@ export const content = {
     ],
     projects: [
         {
+            id: "guardian-app",
             title: "Guardian App",
-            description: "A comprehensive women's safety application with real-time location tracking and emergency response features.",
+            summary: "A comprehensive women's safety application with real-time location tracking and emergency response features.",
+            content: `
+# Guardian App
+
+A robust mobile application designed to enhance personal safety, specifically focused on women's security in urban environments.
+
+## Key Features
+- **Real-time Location Tracking**: Uses Google Maps API to share live location with trusted contacts.
+- **SOS Alert System**: One-tap emergency trigger that sends SMS and location data to emergency contacts.
+- **Geofencing**: Alerts when moving outside designated safe zones.
+- **Fake Call**: Simulates an incoming call to help users exit uncomfortable situations.
+
+## Tech Stack
+- **Frontend**: Flutter (Dart)
+- **Backend**: Firebase (Auth, Firestore, Cloud Functions)
+- **APIs**: Google Maps SDK, Twilio (SMS)
+
+This project was built to address the growing need for accessible personal safety tools.
+            `,
             techStack: ["Flutter", "Firebase", "Google Maps API", "Dart"],
-            link: "#"
+            link: "#",
+            image: "https://images.unsplash.com/photo-1555421689-d68471e88984?q=80&w=1200"
         },
         {
+            id: "deepfake-detector",
             title: "Deepfake Detector",
-            description: "A deep learning system to detect manipulated facial media using CNNs and frequency analysis.",
+            summary: "A deep learning system to detect manipulated facial media using CNNs and frequency analysis.",
+            content: `
+# Deepfake Detector
+
+An advanced Computer Vision system capability of identifying AI-generated facial manipulations in video content.
+
+## Methodology
+- **Frame Extraction**: Splits video into individual frames for analysis.
+- **Face Detection**: Uses MTCNN to isolate faces.
+- **Frequency Analysis**: Analyzes DCT (Discrete Cosine Transform) artifacts often left by GANs.
+- **Classification**: A finetuned Mesonet / Xception network classifies the frame as REAL or FAKE.
+
+## Performance
+- Achieved **92% accuracy** on the FaceForensics++ dataset.
+- Real-time inference capabilities on standard GPU hardware.
+
+## Tech Stack
+- **Languages**: Python
+- **ML Frameworks**: PyTorch, OpenCV, Scikit-learn
+- **Architecture**: CNNs (Convolutional Neural Networks)
+            `,
             techStack: ["Python", "PyTorch", "OpenCV"],
-            link: "#"
+            link: "#",
+            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1200"
         },
         {
+            id: "portfolio",
             title: "Portfolio",
-            description: "This minimal, performance-focused portfolio website.",
+            summary: "This minimal, performance-focused portfolio website.",
+            content: `
+# Neeraj's Portfolio
+
+The website you are currently viewing. Designed to mimic a **Terminal / System Console** interface while maintaining modern web usability.
+
+## Design Philosophy
+- **Minimalism**: No unnecessary bloat. "Digital Minimalism in UI".
+- **Performance**: Built with Vite and React for instant processing.
+- **Thematic**: Consistent "Hacker / Engineer" aesthetic using Monospace fonts and terminal-like logs.
+
+## Architecture
+- **Framework**: React 19 + TypeScript
+- **Styling**: TailwindCSS
+- **Routing**: React Router (Master-Detail Architecture)
+- **Hosting**: GitHub Pages / Vercel
+
+## Features
+- Interactive "Card Decks" for blogs.
+- System-log styled experience timeline.
+- Dynamic routing for projects and logs.
+            `,
             techStack: ["React", "TypeScript", "Vite"],
-            link: "#"
+            link: "#",
+            image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1200"
         }
     ],
     contact: {

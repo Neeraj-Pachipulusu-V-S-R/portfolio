@@ -11,7 +11,7 @@ export const Contact = () => {
                 <span className="terminal-prompt">$</span> ./contact.sh
             </div>
 
-            <div className="text-center space-y-10 max-w-2xl mx-auto">
+            <div className="text-center space-y-10 w-full mx-auto px-4">
                 <div className="font-mono text-console-text text-xl md:text-2xl font-bold">
                     <span className="text-console-success">{">"}</span> Initiating connection protocol...
                 </div>

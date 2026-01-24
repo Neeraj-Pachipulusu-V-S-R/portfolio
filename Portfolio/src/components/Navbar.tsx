@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [time, setTime] = useState(new Date());
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,10 +21,36 @@ export const Navbar = () => {
         };
     }, []);
 
-    const scrollToSection = (id: string) => {
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
+    const handleNavigation = (id: string) => {
+        if (id === 'log') {
+            navigate('/log');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+        if (id === 'projects') {
+            navigate('/projects');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        // If trying to navigate to a section but not on home page
+        if (location.pathname !== '/') {
+            navigate('/');
+            // Wait for navigation to complete before scrolling
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }, 100);
+        } else {
+            // Already on home page
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     };
 
@@ -30,6 +59,7 @@ export const Navbar = () => {
         { name: '~/education', id: 'education' },
         { name: '~/skills', id: 'skills' },
         { name: '~/projects', id: 'projects' },
+        { name: '~/log', id: 'log' },
         { name: './contact', id: 'contact' },
     ];
 
@@ -43,8 +73,12 @@ export const Navbar = () => {
             <div className="container-terminal flex items-center justify-between font-mono text-sm">
                 <div
                     className="flex items-center gap-2 cursor-pointer text-console-text hover:text-console-accent transition-colors"
-                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                    onClick={() => {
+                        navigate('/');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
                 >
+                    {/* existing logo content... kept pure text here for brevity in replacement but strict edit needed */}
                     <span className="text-console-success">➜</span>
                     <span className="font-bold">neeraj@system</span>
                     <span className="text-console-muted">:</span>
@@ -56,7 +90,7 @@ export const Navbar = () => {
                         {navLinks.map((link) => (
                             <li key={link.name}>
                                 <button
-                                    onClick={() => scrollToSection(link.id)}
+                                    onClick={() => handleNavigation(link.id)}
                                     className="text-console-dim hover:text-console-accent transition-colors tracking-tight hover:underline decoration-console-accent/50 underline-offset-4"
                                 >
                                     {link.name}
